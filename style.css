@@ -1,0 +1,91 @@
+/* تصفير الهوامش وتطبيق الخط العربي على كل الصفحة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* تصميم خلفية الشاشة (تدرج لوني أخضر منعش) */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #11998e, #38ef7d); 
+}
+
+/* 🌟 تصميم الواجهة الزجاجية (Glassmorphism) 🌟 */
+.glass-container {
+    background: rgba(255, 255, 255, 0.15); /* خلفية بيضاء شفافة */
+    backdrop-filter: blur(15px); /* تأثير الضباب (الزجاج) */
+    -webkit-backdrop-filter: blur(15px); /* لدعم متصفحات سفاري */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* إطار أبيض خفيف ولمّاع */
+    border-radius: 20px; /* تدوير الزوايا */
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* ظل خفيف للحاوية */
+}
+
+/* تصميم العنوان */
+h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* ظل للنص ليبرز فوق الزجاج */
+}
+
+/* ترتيب الحقول على شكل شبكة مرنة */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+}
+
+/* 🌟 تصميم الحقل ثلاثي الأبعاد (3D Button) 🌟 */
+.category-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 25px 15px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    
+    /* السر في الشكل ثلاثي الأبعاد هو دمج ظل داكن من جهة، وظل فاتح من الجهة المعاكسة */
+    box-shadow:
+        5px 5px 10px rgba(0, 0, 0, 0.1), /* ظل خارجي داكن */
+        -5px -5px 10px rgba(255, 255, 255, 0.4), /* ظل خارجي مضيء */
+        inset 1px 1px 2px rgba(255, 255, 255, 0.5); /* لمعة داخلية */
+        
+    transition: all 0.3s ease; /* حركة ناعمة عند تمرير الماوس */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* التأثير عند تمرير الماوس (تبدو وكأنها ترتفع للأعلى) */
+.category-card:hover {
+    transform: translateY(-5px) scale(1.05); /* رفع الحقل وتكبيره قليلاً */
+    background: rgba(255, 255, 255, 0.3); /* زيادة البياض قليلاً */
+    box-shadow:
+        8px 8px 15px rgba(0, 0, 0, 0.15),
+        -8px -8px 15px rgba(255, 255, 255, 0.5),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* تصميم أيقونات FontAwesome */
+.category-card i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2)); /* ظل للأيقونة لتبدو مجسمة */
+}
+
+/* تصميم اسم القسم */
+.category-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
