@@ -110,7 +110,7 @@
         <section id="category-products-page" class="page glass-page">
             <div class="sticky-top glass-element" style="border-radius: 0 0 20px 20px; border-top: none;">
                 <header class="cart-header" style="background:transparent; border:none; box-shadow:none; border-radius:0; padding-bottom:5px;">
-                    <i class="fa-solid fa-angle-right" onclick="history.back()"></i>
+                    <i class="fa-solid fa-angle-right" onclick="navigateTo('home-page')"></i>
                     <h2 id="cat-page-title">القسم</h2>
                     <div class="cart-icon" onclick="navigateTo('cart-page')" style="position: relative; cursor: pointer; font-size: 1.2rem;">
                         <i class="fa-solid fa-cart-shopping" style="color:var(--text-dark);"></i>
@@ -150,7 +150,7 @@
 
         <section id="offers-page" class="page glass-page">
             <header class="cart-header glass-element sticky-top">
-                <i class="fa-solid fa-angle-right" onclick="history.back()"></i>
+                <i class="fa-solid fa-angle-right" onclick="navigateTo('home-page')"></i>
                 <h2>العروض</h2>
                 <div></div>
             </header>
@@ -175,7 +175,7 @@
 
         <section id="favorite-page" class="page glass-page">
             <header class="cart-header glass-element sticky-top">
-                <i class="fa-solid fa-angle-right" onclick="history.back()"></i>
+                <i class="fa-solid fa-angle-right" onclick="navigateTo('home-page')"></i>
                 <h2>المفضلة</h2>
                 <div></div>
             </header>
@@ -200,7 +200,7 @@
 
         <section id="account-page" class="page glass-page">
             <header class="cart-header glass-element sticky-top">
-                <i class="fa-solid fa-angle-right" onclick="history.back()"></i>
+                <i class="fa-solid fa-angle-right" onclick="navigateTo('home-page')"></i>
                 <h2>الحساب</h2>
                 <div></div>
             </header>
@@ -226,7 +226,7 @@
 
         <section id="cart-page" class="page glass-page">
             <header class="cart-header glass-element sticky-top">
-                <i class="fa-solid fa-angle-right" onclick="history.back()"></i>
+                <i class="fa-solid fa-angle-right" onclick="navigateTo('home-page')"></i>
                 <h2>السلة <span class="cart-count" id="cart-count-title">(0) منتجات</span></h2>
                 <i class="fa-regular fa-trash-can" onclick="clearCart()"></i>
             </header>
@@ -253,10 +253,10 @@
 
             <div class="checkout-form glass-element" id="checkout-form-section" style="display: none;">
                 <h3>معلومات التوصيل</h3>
-                <input type="text" placeholder="الاسم الكامل" class="checkout-input glass-element">
-                <input type="tel" placeholder="رقم الهاتف" class="checkout-input glass-element">
-                <input type="text" placeholder="العنوان بالتفصيل" class="checkout-input glass-element">
-                <button class="btn-primary" onclick="confirmOrder()">تأكيد الطلب <i class="fa-solid fa-check"></i></button>
+                <input type="text" id="checkout-name" placeholder="الاسم" class="checkout-input glass-element">
+                <input type="tel" id="checkout-phone" placeholder="الرقم" class="checkout-input glass-element" oninput="checkPhoneLength()">
+                <input type="text" id="checkout-address" placeholder="العنوان" class="checkout-input glass-element">
+                <button id="btn-confirm-order" class="btn-primary" onclick="confirmOrder()" style="opacity: 0.5; pointer-events: none;">تأكيد الطلب <i class="fa-solid fa-check"></i></button>
             </div>
             
             <nav class="bottom-nav glass-element">
