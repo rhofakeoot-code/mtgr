@@ -307,6 +307,23 @@ function showCheckoutForm() {
     }
     document.getElementById('cart-summary-section').style.display = 'none';
     document.getElementById('checkout-form-section').style.display = 'block';
+    
+    document.getElementById('checkout-name').value = '';
+    document.getElementById('checkout-phone').value = '';
+    document.getElementById('checkout-address').value = '';
+    checkPhoneLength();
+}
+
+function checkPhoneLength() {
+    const phone = document.getElementById('checkout-phone').value;
+    const btn = document.getElementById('btn-confirm-order');
+    if (phone && phone.length >= 10) {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+    } else {
+        btn.style.opacity = '0.5';
+        btn.style.pointerEvents = 'none';
+    }
 }
 
 function confirmOrder() {
