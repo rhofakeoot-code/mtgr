@@ -44,7 +44,7 @@
                     <div class="logo-small">
                         <div class="logo-circle-small"><i class="fa-solid fa-satellite-dish"></i></div>
                     </div>
-                    <div class="contact-us">تواصل معنا <i class="fa-solid fa-phone-volume"></i></div>
+                    <div class="contact-us" onclick="window.open('https://wa.me/9647833390888', '_blank')" style="cursor:pointer;">تواصل معنا <i class="fa-solid fa-phone-volume"></i></div>
                     <div class="header-icons">
                         <div class="cart-icon" onclick="navigateTo('cart-page')">
                             <i class="fa-solid fa-cart-shopping"></i>
@@ -61,18 +61,13 @@
             </div>
 
             <div class="main-content" style="padding-top: 15px;">
-                <div class="banner">
-                    <img id="banner-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&h=150" alt="Banner">
-                </div>
+                <div class="banner" id="banner-container"></div>
 
                 <div class="section-header">
                     <h3>العروض</h3>
                     <span class="more" onclick="navigateTo('offers-page')">المزيد <i class="fa-solid fa-angle-left"></i></span>
                 </div>
-                <div class="offers-grid">
-                    <img id="offer-img-1" class="offer-card" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=400&h=150" alt="عرض">
-                    <img id="offer-img-2" class="offer-card" src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=400&h=150" alt="عرض">
-                </div>
+                <div class="offers-grid" id="offers-container"></div>
 
                 <div class="section-header mt-20">
                     <h3>الأقسام</h3>
@@ -208,19 +203,6 @@
                 <div class="logo-circle" style="margin: 0 auto 20px auto;"><i class="fa-regular fa-user" style="font-size:40px;"></i></div>
                 <h3 style="color:#333;">حساب المستخدم</h3>
                 <button class="btn-guest" style="margin-top:20px;" onclick="logout()">تسجيل الخروج</button>
-                
-                <hr style="margin: 20px 0; border: 1px solid rgba(0,0,0,0.1);">
-                <h4 style="margin-bottom: 15px; color: #333;">لوحة الإدارة المؤقتة (إضافة منتج)</h4>
-                
-                <input type="text" id="add-prod-name" placeholder="اسم المنتج" class="checkout-input glass-element">
-                <input type="number" id="add-prod-price" placeholder="السعر" class="checkout-input glass-element">
-                <input type="file" id="add-prod-image" accept="image/*" class="checkout-input glass-element">
-                <img id="add-prod-preview" style="width: 100%; max-height: 200px; object-fit: contain; display: none; margin-bottom: 15px;">
-                <button id="btn-save-product" class="btn-primary">حفظ المنتج <i class="fa-solid fa-cloud-arrow-up"></i></button>
-
-                <h4 style="margin-top: 20px; color: #333;">المنتجات المضافة عبر الإدارة</h4>
-                <div id="admin-products-list" style="margin-top: 10px; display: flex; flex-direction: column; gap: 10px;"></div>
-
             </div>
             <nav class="bottom-nav glass-element">
                 <div class="nav-item" onclick="navigateTo('home-page')">
